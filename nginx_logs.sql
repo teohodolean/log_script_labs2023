@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `nginx_logs`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `nginx_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(15) NOT NULL,
+  `ip_address` varchar(30) NOT NULL,
   `timestamp` datetime NOT NULL,
   `request` text NOT NULL,
-  `status_code` smallint(6) NOT NULL,
+  `status_code` varchar(30) NOT NULL,
   `user_agent` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_log` (`ip_address`,`timestamp`,`request`) USING HASH
